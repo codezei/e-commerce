@@ -1,0 +1,102 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    font-family: 'Rubik', sans-serif;
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        &-item {
+            &:not(:last-child) {
+                margin-right: 15px;
+            }
+        }
+        
+    }
+    
+}
+.actions-profile {
+    display: flex;
+    align-items: center;
+    background: #fcd7b6;
+    padding: 10px 20px;
+    height: 50px;
+    border-radius: 50px;
+    &__item {
+        padding: 5px  20px;
+        position: relative;
+        cursor: pointer;
+        &:first-child {
+            border-right: 1px solid rgba($color: #fff, $alpha: 0.5);
+        }
+        &-count {
+            position: absolute;
+            display: block;
+            top: 10px;
+            right: 20px;
+            padding: 3px;
+            background: #fff;
+            border-radius: 18px;
+            transform: translate(50%, -50%);
+            font-size: 10px;
+            min-width: 18px;
+            text-align: center;
+
+        }
+        &-img {
+            display: block;
+        }
+    }
+}
+.actions-search {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    background: #edf1f4;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    transition: all 400ms;
+    &_open {
+        width: 150px;
+        transition: all 400ms;
+        .actions-search__input {
+            width: 100%;
+            margin-right: 10px;
+            transition: all 400ms;
+        }
+    }
+
+    &__input {
+        width: 0;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid rgba($color: #243f4d, $alpha: 0.5);
+        transition: all 400ms;
+    }
+}
+.menu {
+    display: flex;
+    align-items: center;
+    &__link {
+        color: #436372;
+        padding: 10px;
+        text-decoration: none;
+    }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    &__text {
+        color: #436372;
+        font-size: 36px;
+        font-weight: 500;
+    }
+    &__img {
+        margin-right: 10px;
+    }
+}
