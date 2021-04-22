@@ -5,6 +5,8 @@ import Header from './components/Header'
 import Home from './components/pages/Home'
 import About from './components/pages/About'
 
+
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,10 +14,11 @@ import {
 } from "react-router-dom";
 
 function App() {
-
+ 
   
   return (
     <div className="App">
+      
       <Router>
       <Header></Header>
         <Switch>
@@ -27,6 +30,8 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      
+
     </div>
   );
 }

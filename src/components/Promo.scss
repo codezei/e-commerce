@@ -1,16 +1,30 @@
 .promo {
     background: #fcd7b6;
     font-family: 'Rubik', sans-serif;
-    
+    padding: 90px 0;
     &-slider {
-        max-width: 1330px;
-        margin-left: auto;
-        margin-right: auto;
+        position: relative;
+        overflow: hidden;
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 640px;
+            height: 640px;
+            border-radius: 50%;
+            background: rgb(252,215,182);
+            background: linear-gradient(90deg, rgba(252,215,182,1) 10%, rgba(255,255,255,1) 100%);
+            top: 50%;
+            left: calc(50% + 50px);
+            transform: translateY(-50%);
+
+        }
         &__item {
-            padding: 90px 0;
+            
             display: flex;
             align-items: center;
             justify-content: space-between;
+            height: 640px;
             &-title {
                 color: #243f4d;
                 font-size: 72px;
@@ -28,26 +42,10 @@
             }
             &-media {
                 position: relative;
-                z-index: 2;
-                height: 640px;
                 display: flex;
                 align-items: center;
                 flex-shrink: 0;
-                padding-right: 120px;
-                &:before {
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    width: 640px;
-                    height: 640px;
-                    border-radius: 50%;
-                    background: rgb(252,215,182);
-                    background: linear-gradient(90deg, rgba(252,215,182,1) 10%, rgba(255,255,255,1) 100%);
-                    top: 0;
-                    right: 0;
-                    z-index: -1;
 
-                }
 
             }
         }

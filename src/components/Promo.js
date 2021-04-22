@@ -16,7 +16,7 @@ SwiperCore.use([ Pagination]);
 function Promo () {
     return (
         <section className="promo">
-            <div className="container">
+            <div className="">
                 <div className="promo-slider">
                 <Swiper
                     spaceBetween={50}
@@ -28,7 +28,7 @@ function Promo () {
                     
                     >
                     <SwiperSlide>
-                    <div className="promo-slider__item">
+                    <div className="promo-slider__item container">
                         <div className="promo-slider__item-info">
                             <h3 className="promo-slider__item-title">
                             SMART AND TRENDY
@@ -47,7 +47,7 @@ function Promo () {
                     </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                    <div className="promo-slider__item">
+                    <div className="promo-slider__item container">
                         <div className="promo-slider__item-info">
                             <h3 className="promo-slider__item-title">
                             SMART AND TRENDY
@@ -66,7 +66,7 @@ function Promo () {
                     </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                    <div className="promo-slider__item">
+                    <div className="promo-slider__item container">
                         <div className="promo-slider__item-info">
                             <h3 className="promo-slider__item-title">
                             SMART AND TRENDY

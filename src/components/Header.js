@@ -9,7 +9,7 @@ function Header () {
 
     return(
         <header>
-            <div className="container">
+            <div className="container-fluid">
                 <div className="header">
                     <div className="logo">
                         <img src={logo} alt="" className="logo__img"/>
