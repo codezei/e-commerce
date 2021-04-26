@@ -1,0 +1,46 @@
+.video {
+    position: relative;
+    &__poster {
+        
+        width: 100%;
+        display: block;
+    }
+    &__play {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: #a3bbc8;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: rgba($color: rgb(219, 218, 218), $alpha: 0.7);
+            left: -15px;
+            top: -15px;
+        }
+    }
+    &__wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.95);
+        top: 0;
+        left: 0;
+        padding: 50px 0;
+        text-align: center;
+        iframe {
+            height: 100%;
+        }
+    }
+}

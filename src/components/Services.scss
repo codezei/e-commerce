@@ -1,0 +1,33 @@
+.services {
+    background: #fef7f0;
+    font-family: "DM Sans", sans-serif;
+    padding: 40px 0;
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        max-width: 310px;
+        width: 100%;
+        margin: 0 15px;
+
+    }
+    &__img {
+        flex-shrink: 0;
+        display: block;
+        margin-right: 35px;
+    }
+    &__title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #414141;
+    }
+    &__text {
+        color: #585858;
+        line-height: 1.6;
+    }
+}

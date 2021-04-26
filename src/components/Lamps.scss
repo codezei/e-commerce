@@ -1,0 +1,49 @@
+.lamps {
+    font-family: "DM Sans", sans-serif;
+    padding-top: 100px;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        width: calc(50% - 15px);
+        display: flex;
+        align-items: flex-end;
+        background-color: #feefe2;
+        padding: 0 15px 100px 15px;
+        justify-content: center;
+
+    }
+    &__title {
+        color: #243f4d;
+        font-weight: 700;
+        font-size: 26px;
+        margin-bottom: 25px;
+    }
+    &__text {
+        font-family: "Rubik", sans-serif;
+        color: #243f4d;
+        margin-bottom: 20px;
+    }
+    &__img {
+        margin-right: 35px;
+        margin-top: -105px;
+    }
+    &__info {
+        max-width: 340px;
+        width: 100%;
+    }
+    &__btn {
+            background-color: transparent;
+            color: #436372;
+            border: 1px solid #243f4d;
+            border-radius: 5px;
+            outline: none;
+            padding: 20px 70px 20px 20px;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='9' viewBox='0 0 22 9'><path fill='%23436372' fill-rule='evenodd' d='M603.3,2616.47h16.948l-0.1,2.86a0.279,0.279,0,0,0-.084.2,0.3,0.3,0,0,0,.084.21l0.172,0.17a0.276,0.276,0,0,0,.408,0l4.192-4.21a0.283,0.283,0,0,0,.084-0.2,0.307,0.307,0,0,0-.084-0.21l-4.192-4.21a0.3,0.3,0,0,0-.408,0l-0.172.17a0.3,0.3,0,0,0-.084.21,0.3,0.3,0,0,0,.084.2l0.113,2.86H603.292a0.3,0.3,0,0,0-.292.3v1.37A0.288,0.288,0,0,0,603.3,2616.47Z' transform='translate(-603 -2611)'/></svg>");
+            background-position: right 20px center;
+            background-size: 25px;
+            background-repeat: no-repeat;
+            cursor: pointer;
+    }
+}
