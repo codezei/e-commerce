@@ -9,7 +9,7 @@ function Articles () {
                         <h2 className="articles__title">
                             Our Insights &#38; Articles
                         </h2>
-                        <Link to="blog">View All </Link>
+                        <Link to="blog" className="articles__link">View All &gt;</Link>
                     </div>
             </div>
             <div className="articles__list-wrap">
@@ -17,14 +17,16 @@ function Articles () {
                 <div className="articles__list">
                     <div className="articles__item">
                         <img src="/article1.jpg" alt="" className="articles__item-img"/>
-                        <div className="articles__item-info">
+                        <div className="articles__item-content">
                             <h5 className="articles__item-category">
                                 News
                             </h5>
                             <p className="articles__item-desc">
                                 Diusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                             </p>
-                            <div className="articles__item-data">
+
+                        </div>
+                        <div className="articles__item-footer">
                                 <p className="articles__item-date">
                                     28 JANUARY, 2020
                                 </p>
@@ -32,46 +34,46 @@ function Articles () {
                                     BY ADMIN
                                 </p>
                             </div>
-                        </div>
 
                     </div>
                     <div className="articles__item">
                         <img src="/article2.jpg" alt="" className="articles__item-img"/>
-                        <div className="articles__item-info">
-                        <h5 className="articles__item-category">
-                            News
-                        </h5>
-                        <p className="articles__item-desc">
-                            Aonsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-                        </p>
-                        <div className="articles__item-data">
-                            <p className="articles__item-date">
-                                28 JANUARY, 2020
+                        <div className="articles__item-content">
+                            <h5 className="articles__item-category">
+                                News
+                            </h5>
+                            <p className="articles__item-desc">
+                                Aonsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore 
                             </p>
-                            <p className="articles__item-author">
-                                BY ADMIN
-                            </p>
+
                         </div>
+                        <div className="articles__item-footer">
+                                <p className="articles__item-date">
+                                    28 JANUARY, 2020
+                                </p>
+                                <p className="articles__item-author">
+                                    BY ADMIN
+                                </p>
                         </div>
 
                     </div>
                     <div className="articles__item">
                         <img src="/article3.jpg" alt="" className="articles__item-img"/>
-                        <div className="articles__item-info">
-                        <h5 className="articles__item-category">
-                            News
-                        </h5>
-                        <p className="articles__item-desc">
-                            Rncididunt ut labore et dolore magna aliqua. Ut enim 
-                        </p>
-                        <div className="articles__item-data">
+                        <div className="articles__item-content">
+                            <h5 className="articles__item-category">
+                                News
+                            </h5>
+                            <p className="articles__item-desc">
+                                Rncididunt ut labore et dolore magna aliqua. Ut enim 
+                            </p>
+                        </div>
+                        <div className="articles__item-footer">
                             <p className="articles__item-date">
                                 28 JANUARY, 2020
                             </p>
                             <p className="articles__item-author">
                                 BY ADMIN
                             </p>
-                        </div>
                         </div>
 
                     </div>
