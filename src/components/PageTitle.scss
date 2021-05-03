@@ -1,0 +1,19 @@
+.page-title {
+    background: #a3bbc8;
+    color: #222933;
+    font-family: 'Rubik', sans-serif;
+    padding: 35px 0;
+    &__title {
+        font-size: 36px;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+.breadcrumbs {
+    text-align: center;
+    &__link {
+        color: inherit;
+        font-size: 14px;
+    }
+}

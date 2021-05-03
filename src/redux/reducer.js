@@ -6,62 +6,68 @@ let initialState = {
       {
         id: "product-1",
         name: "Beat Flat Pendant",
-        price: "",
+        price: 30,
         color: "Black",
         collection: "Classic",
         category: "furniture",
         img: "product-new-1.png",
-        label: "new"
+        label: "new",
+        brand: "RFL"
       },
       {
         id: "product-2",
         name: "Lampe Sur Pieds",
-        price: "",
+        price: 15,
         color: "Bamboo",
         collection: "Classic",
         category: "furniture",
         img: "product-new-2.png",
-        label: "new"
+        label: "new",
+        brand: "Brothers"
       },
       {
         id: "product-3",
         name: "Rattan Rocking",
-        price: "",
+        price: 10,
         color: "Black",
         collection: "Classic",
         category: "chair",
         img: "product-new-3.png",
-        label: "new"
+        label: "new",
+        brand: "Regal"
       },
       {
         id: "product-4",
         name: "Rattan Rocking",
-        price: "",
+        price: 60,
         color: "Bamboo",
         collection: "Classic",
         category: "furniture",
         img: "product-new-4.png",
-        label: "new"
+        label: "new",
+        brand: "Nadia"
       },
       {
         id: "product-5",
         name: "Rattan Rocking",
-        price: "",
+        price: 70,
         color: "Bamboo",
         collection: "Classic",
         category: "chair",
         img: "product-new-5.png",
-        label: "new"
+        label: "new",
+        brand: "Otobi"
       },
       {
         id: "product-6",
         name: "Lampe Sur Pieds",
-        price: "",
+        price: 15,
         color: "Bamboo",
         collection: "Classic",
         category: "furniture",
         img: "product-new-6.png",
-        label: "new"
+        label: "new",
+        brand: "RFL"
       },
       {
         id: "product-7",
@@ -71,7 +77,8 @@ let initialState = {
         collection: "",
         category: "furniture",
         img: "product-week-1.png",
-        label: "week"
+        label: "week",
+        brand: "Brothers"
       },
       {
         id: "product-8",
@@ -81,7 +88,8 @@ let initialState = {
         collection: "",
         category: "chair",
         img: "product-week-2.png",
-        label: "week"
+        label: "week",
+        brand: "Regal"
       },
       {
         id: "product-9",
@@ -91,7 +99,8 @@ let initialState = {
         collection: "",
         category: "chair",
         img: "product-week-3.png",
-        label: "week"
+        label: "week",
+        brand: "Nadia"
       },
       {
         id: "product-10",
@@ -101,7 +110,8 @@ let initialState = {
         collection: "",
         category: "furniture",
         img: "product-week-4.png",
-        label: "week"
+        label: "week",
+        brand: "Otobi"
       },
       {
         id: "product-11",
@@ -111,7 +121,8 @@ let initialState = {
         collection: "",
         category: "furniture",
         img: "product-week-5.png",
-        label: "week"
+        label: "week",
+        brand: "RFL"
       },
       {
         id: "product-12",
@@ -121,7 +132,8 @@ let initialState = {
         collection: "",
         category: "chair",
         img: "product-week-6.png",
-        label: "week"
+        label: "week",
+        brand: "Brothers"
       },
       {
         id: "product-13",
@@ -131,7 +143,8 @@ let initialState = {
         collection: "",
         category: "chair",
         img: "product-week-7.png",
-        label: "week"
+        label: "week",
+        brand: "Regal"
       },
       {
         id: "product-14",
@@ -141,7 +154,8 @@ let initialState = {
         collection: "",
         category: "furniture",
         img: "product-week-8.png",
-        label: "week"
+        label: "week",
+        brand: "Nadia"
       }
     ],
     categories: [

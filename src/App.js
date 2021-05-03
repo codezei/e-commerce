@@ -4,6 +4,7 @@ import React from 'react'
 import Header from './components/Header'
 import Home from './components/pages/Home'
 import About from './components/pages/About'
+import Catalog from './components/pages/Catalog'
 
 
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/" exact>
             <Home />
+          </Route>
+          <Route path="/list" exact>
+            <Catalog/>
           </Route>
         </Switch>
       </Router>
