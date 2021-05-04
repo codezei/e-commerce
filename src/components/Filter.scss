@@ -1,0 +1,54 @@
+.filter {
+    font-family: "DM Sans", sans-serif;
+    color: #243f4d;
+    margin-bottom: 40px;
+    &__title {
+        text-transform: uppercase;
+        display: inline-block;
+        position: relative;
+        font-weight: 700;
+        margin-bottom: 30px;
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background: #a3bbc8;
+            top: 50%;
+            right: -15px;
+            transform: translate(100%, -50%);
+        }
+    }
+    &__list {
+        font-family: "Rubik", sans-serif;
+    }
+    &__item {
+        margin-bottom: 5px;
+    }
+    &__btn {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px;
+        background: transparent;
+        border: none;
+        outline: none;
+        text-transform: capitalize;
+        border-radius: 2px;
+        cursor: pointer;
+        &--active {
+            background: #a3bbc8;
+        }
+        &:hover {
+            background: #a3bbc8;
+        }
+        span {
+            pointer-events: none;
+        }
+    }
+    &__price {
+        display: flex;
+        justify-content: space-between;
+    }
+}

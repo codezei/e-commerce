@@ -29,7 +29,7 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
-          <Route path="/list" exact>
+          <Route path="/list">
             <Catalog/>
           </Route>
         </Switch>

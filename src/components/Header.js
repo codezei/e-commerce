@@ -26,7 +26,7 @@ function Header () {
                             <NavLink to="/about" className="menu__link" activeClassName="menu__link--active">Services</NavLink>
                         </li>
                         <li className="menu__item">
-                            <NavLink to="/about" className="menu__link" activeClassName="menu__link--active">Pages</NavLink>
+                            <NavLink to="/list" className="menu__link" activeClassName="menu__link--active">Catalog</NavLink>
                         </li>
                         <li className="menu__item">
                             <NavLink to="/about" className="menu__link" activeClassName="menu__link--active">News</NavLink>

@@ -1,23 +1,27 @@
-import "./FilterBrand.scss"
+import "./Filter.scss"
 
 function FilterBrand (props) {
     return (
-        <div className="filter-brand filter">
-            <h3 className="filter-brand__title">
+        <div className="filter">
+            <h3 className="filter__title">
                 Brand
             </h3>
-            <ul className="filter-brand__list">
+            <ul className="filter__list">
                 {props.brands.map((item, index)=>{
                     return (
-                        <li className="filter-brand__item" key={`${item}-${index}`}>
-                        <button className={`filter-brand__btn ${item.brandName === props.activeBrand ? "filter-brand__btn--active" : ""}`} data-brand={item.brandName} onClick={(e)=>{
+                        <li className="filter__item" key={`${item}-${index}`}>
+                        <button className={`filter__btn ${item.brandName === props.activeBrand ? "filter__btn--active" : ""}`} data-brand={item.brandName} onClick={(e)=>{
                             props.setActiveBrand(e.target.dataset.brand)
                             props.setCategories(props.getUniqueCategory(e.target.dataset.brand))
                             props.setMaxMinPrice(props.getMinMaxPrice(props.activeCategory, e.target.dataset.brand))
                             props.setMinMaxValue(props.getMinMaxPrice(props.activeCategory, e.target.dataset.brand))
 
+                            // props.setCountProducts(props.getCountProducts(props.activeCategory, e.target.dataset.brand, props.getMinMaxPrice(props.activeCategory, e.target.dataset.brand)))
+                            
+
                         }}>
-                            {item.brandName} - {`(${item.brandCount})`}
+                            <span>{item.brandName}</span> 
+                            <span>{`(${item.brandCount})`}</span>
                         </button>
                     </li>
                     )

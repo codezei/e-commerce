@@ -6,28 +6,40 @@ import FilterCategory from "../FilterCategory"
 import FilterBrand from "../FilterBrand"
 import CatalogList from "../CatalogList"
 import FilterPrice from "../FilterPrice"
+import "./Catalog.scss"
+
 
 
 
 function Catalog (props) {
+    const rangeMax = 12
     let [categories, setCategories] = React.useState([])
     let [brands, setBrands] = React.useState([])
     let [activeCategory, setActiveCategory] = React.useState("")
     let [activeBrand, setActiveBrand] = React.useState("")
     let [maxMinPrice, setMaxMinPrice] = React.useState(0)
-    let [minMaxValue, setMinMaxValue] = React.useState([])
+    let [minMaxValue, setMinMaxValue] = React.useState([0, 100])
+    let [pageNumber, setPageNumber] = React.useState(1)
+    let [rangePage, setRangePage] = React.useState(pageNumber * rangeMax)
+
+
+
 
     React.useEffect(()=>{
         setMaxMinPrice(getMinMaxPrice(activeCategory, activeBrand))
         setMinMaxValue(getMinMaxPrice(activeCategory, activeBrand))
         setCategories(getUniqueCategory(activeBrand))
         setBrands(getUniqueBrand(activeCategory))
+        
+        
     }, [])
 
-    function getUniqueCategory (acbrand) {
+
+
+    function getUniqueCategory (brand) {
         let arr = []
         props.products.forEach(item=>{
-            if ((acbrand === "" || acbrand === item.brand)) {
+            if ((brand === "" || brand === item.brand)) {
                 arr.push(item.category) 
             }
         })
@@ -39,10 +51,11 @@ function Catalog (props) {
         })
         return res
     }
-    function getUniqueBrand (accat) {
+    function getUniqueBrand (category) {
+        console.log(minMaxValue)
         let arr = []
         props.products.forEach(item=>{
-            if ((accat === "" || accat === item.category)) {
+            if ((category === "" || category === item.category)) {
                 arr.push(item.brand) 
             }
         })
@@ -65,40 +78,105 @@ function Catalog (props) {
         })
         return res2
     }
-    function getMinMaxPrice(accat, acbrand) {
-
+    function getMinMaxPrice(category, brand) {
         let arr = [props.products[0].price, props.products[0].price]
-
         props.products.forEach(item=>{
-
-            if((item.price < arr[0]) && (acbrand === "" || acbrand === item.brand) && (accat === "" || accat === item.category)) {
+            if((item.price < arr[0]) && (brand === "" || brand === item.brand) && (category === "" || category === item.category)) {
                 arr[0] = item.price
-            } else if ((item.price > arr[1]) && (acbrand === "" || acbrand === item.brand) && (accat === "" || accat === item.category)) {
+            } else if ((item.price > arr[1]) && (brand === "" || brand === item.brand) && (category === "" || category === item.category)) {
                 arr[1] = item.price
             } 
 
         }) 
-        console.log(arr)
-        return arr
+        return arr 
+    }
+    // function getCountProducts (category, brand, price) {
+    //     let count = 0
+    //     props.products.forEach((product)=>{
+            
+    //        if ((category === "" || category === product.category) && (brand === "" || brand === product.brand) && (product.price >= price[0] && product.price <= price[1])) {
+    //         count++
+    //        }
+    //     })
+    //     return count;
         
 
-    }
+        
+    // }
+
 
     return (
         <div>
             <PageTitle title="Product list"></PageTitle>
+            <div className="container">
             <div className="catalog">
-                <div className="sidebar">
-                    <FilterCategory setMinMaxValue={setMinMaxValue} categories={categories} setActiveCategory={setActiveCategory} activeCategory={activeCategory} setBrands={setBrands} getUniqueBrand={getUniqueBrand} getMinMaxPrice={getMinMaxPrice} setMaxMinPrice={setMaxMinPrice} activeBrand={activeBrand}></FilterCategory>
-                    <FilterBrand setMinMaxValue={setMinMaxValue} brands={brands} activeBrand={activeBrand} setActiveBrand={setActiveBrand} setCategories={setCategories} getUniqueCategory={getUniqueCategory} getMinMaxPrice={getMinMaxPrice} setMaxMinPrice={setMaxMinPrice} activeCategory={activeCategory}></FilterBrand>
-                    <FilterPrice  maxMinPrice={maxMinPrice} setMaxMinPrice={setMaxMinPrice} minMaxValue={minMaxValue} setMinMaxValue={setMinMaxValue}></FilterPrice>
+                <div className="catalog__sidebar">
+                    <FilterCategory 
+                        // setCountProducts={setCountProducts}
+                        minMaxValue={minMaxValue} 
+                        // getCountProducts={getCountProducts} 
+                        setMinMaxValue={setMinMaxValue} 
+                        categories={categories} 
+                        setActiveCategory={setActiveCategory} 
+                        activeCategory={activeCategory} 
+                        setBrands={setBrands} 
+                        getUniqueBrand={getUniqueBrand} 
+                        getMinMaxPrice={getMinMaxPrice} 
+                        setMaxMinPrice={setMaxMinPrice} 
+                        activeBrand={activeBrand}
+                    >
+                    </FilterCategory>
+                    <FilterPrice 
+                        // getCountProducts={getCountProducts} 
+                        maxMinPrice={maxMinPrice} 
+                        setMaxMinPrice={setMaxMinPrice} 
+                        minMaxValue={minMaxValue} 
+                        setMinMaxValue={setMinMaxValue}
+                        getMinMaxPrice={getMinMaxPrice}
+                        activeCategory={activeCategory}
+                        activeBrand={activeBrand}
+                    >
+                    </FilterPrice>
+                    <FilterBrand
+                        // setCountProducts={setCountProducts}
+                        minMaxValue={minMaxValue} 
+                        // getCountProducts={getCountProducts} 
+                        setMinMaxValue={setMinMaxValue} 
+                        brands={brands} 
+                        activeBrand={activeBrand} 
+                        setActiveBrand={setActiveBrand} 
+                        setCategories={setCategories} 
+                        getUniqueCategory={getUniqueCategory} 
+                        getMinMaxPrice={getMinMaxPrice} 
+                        setMaxMinPrice={setMaxMinPrice} 
+                        activeCategory={activeCategory}
+                    >
+                    </FilterBrand>
 
                     <div className="recent">
 
                     </div>
                 </div>
-                    <CatalogList products={props.products} activeCategory={activeCategory} activeBrand={activeBrand} minMaxValue={minMaxValue}></CatalogList>
+                <div className="catalog__content">
+                    
+                     <CatalogList 
+                        products={props.products} 
+                        activeCategory={activeCategory} 
+                        activeBrand={activeBrand} 
+                        minMaxValue={minMaxValue}
+                        pageNumber={pageNumber} 
+                        setPageNumber={setPageNumber}
+                        rangePage={rangePage}
+                        setRangePage={setRangePage}
+                        rangeMax={rangeMax}
+    
+                     >
+                     </CatalogList>
+
+                </div>
             </div>
+            </div>
+
         </div>
     )
 }
