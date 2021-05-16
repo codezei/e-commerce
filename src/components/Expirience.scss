@@ -1,0 +1,70 @@
+.expirience {
+    font-family: "Rubik", sans-serif;
+    color: #243f4d;
+    padding: 100px 0;
+    &__wrap {
+        display: flex;
+        align-items: center;
+    }
+    &__image {
+        width: 100%;
+        &-wrap {
+            width: 50%;
+            padding: 0 15px;
+        }
+    }
+    &__info {
+        width: 50%;
+        padding: 0 15px;
+    }
+    &__years {
+        
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        &-count {
+            font-size: 140px;
+            color: #a3bbc8;
+            margin-right: 30px;
+            font-weight: 700;
+        }
+        &-text {
+            color: #243f4d;
+            line-height: 1.5;
+        }
+    }
+    &__title {
+        color: #243f4d;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        margin-bottom: 50px;
+        font-size: 36px;
+    }
+    &-result {
+        display: flex;
+        border-top: 1px solid #09316f;
+        align-items: center;
+        margin-top: 45px;
+        padding-top: 45px;
+        font-family: "DM Sans", sans-serif;
+        &__item {
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+        }
+        &__img {
+            margin-right: 20px;
+        }
+        &__count {
+            color: #243f4d;
+            
+            font-weight: 700;
+            font-size: 36px;
+        }
+        &__name {
+            font-weight: 700;
+            color: #4c4c4c;
+        }
+    }
+    
+}

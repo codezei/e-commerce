@@ -1,0 +1,26 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 100px 0;
+    font-family: 'Rubik', sans-serif;
+    &__btn {
+        font-family: inherit;
+        color: #243f4d;
+        border: 1px solid #a3bbc8;
+        padding: 10px;
+        background-color: #fff;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+        &:hover {
+            background-color: #a3bbc8;
+            color: #fff;
+        }
+        &--active {
+            background-color: #a3bbc8;
+            color: #fff;
+        }
+
+    }
+}

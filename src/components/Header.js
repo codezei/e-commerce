@@ -29,10 +29,10 @@ function Header () {
                             <NavLink to="/list" className="menu__link" activeClassName="menu__link--active">Catalog</NavLink>
                         </li>
                         <li className="menu__item">
-                            <NavLink to="/about" className="menu__link" activeClassName="menu__link--active">News</NavLink>
+                            <NavLink to="/blog" className="menu__link" activeClassName="menu__link--active">Blog</NavLink>
                         </li>
                         <li className="menu__item">
-                            <NavLink to="/about" className="menu__link" activeClassName="menu__link--active">Contact</NavLink>
+                            <NavLink to="/contact" className="menu__link" activeClassName="menu__link--active">Contact</NavLink>
                         </li>
                     </ul>
                     <div className="header__actions">

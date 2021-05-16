@@ -179,6 +179,62 @@ let initialState = {
         name: "Decor",
         value: "decor"
       }
+    ],
+    articles: [
+      {
+        id: "article1",
+        image: "article1.jpg",
+        date: "28 JANUARY, 2020",
+        author: "BY ADMIN",
+        title: "Fonsectetur adipisicing  eiusmod ",
+        text: "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ",
+        category: "Chair"
+      },
+      {
+        id: "article2",
+        image: "article2.jpg",
+        date: "28 JANUARY, 2020",
+        author: "BY ADMIN",
+        title: "Fonsectetur adipisicing  eiusmod ",
+        text: "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ",
+        category: "Table"
+      },
+      {
+        id: "article3",
+        image: "article3.jpg",
+        date: "28 JANUARY, 2020",
+        author: "BY ADMIN",
+        title: "Fonsectetur adipisicing  eiusmod ",
+        text: "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ",
+        category: "Lamp"
+      },
+      {
+        id: "article4",
+        image: "article4.jpg",
+        date: "28 JANUARY, 2020",
+        author: "BY ADMIN",
+        title: "Fonsectetur adipisicing  eiusmod ",
+        text: "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ",
+        category: "Clock"
+      },
+      {
+        id: "article5",
+        image: "article1.jpg",
+        date: "28 JANUARY, 2020",
+        author: "BY ADMIN",
+        title: "Fonsectetur adipisicing  eiusmod ",
+        text: "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ",
+        category: "Chair"
+      },
+      {
+        id: "article6",
+        image: "article2.jpg",
+        date: "28 JANUARY, 2020",
+        author: "BY ADMIN",
+        title: "Fonsectetur adipisicing  eiusmod ",
+        text: "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut alLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ",
+        category: "Watch"
+      }
     ]
 }
 

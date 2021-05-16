@@ -1,6 +1,6 @@
-import "./Filter.scss"
 
-function FilterCategory (props) {
+
+function FilterCategoryBlog (props) {
     return (
         <div className="filter">
             <h3 className="filter__title">
@@ -12,7 +12,6 @@ function FilterCategory (props) {
                         <li className="filter__item" key={`${item}-${index}`}>
                             <button className={`filter__btn ${item === props.activeCategory ? "filter__btn--active" : ""}`} data-category={item} onClick={(e)=>{
                                 props.setActiveCategory(e.target.dataset.category)
-                                props.setBrands(props.getUniqueBrand(e.target.dataset.category, props.minMaxValue))
                             }}>
                                 <span>{item}</span> <span>&gt;</span>
                             </button>
@@ -24,4 +23,4 @@ function FilterCategory (props) {
     )
 }
 
-export default FilterCategory;
+export default FilterCategoryBlog;

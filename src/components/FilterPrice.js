@@ -20,7 +20,12 @@ function FilterPrice (props) {
                         +newMinValue.toFixed(0), +newMaxValue.toFixed(0)
                         
                     ])
-                    // props.getCountProducts(props.activeCategory, props.activeBrand, [+newMinValue.toFixed(0), +newMaxValue.toFixed(0)])
+                    console.log([
+                        +newMinValue.toFixed(0), +newMaxValue.toFixed(0)
+                        
+                    ]+' value price')
+
+                    props.setBrands(props.getUniqueBrand(props.activeCategory, [+newMinValue.toFixed(0), +newMaxValue.toFixed(0)]))
 
                 }}
                 className="filter__range"
