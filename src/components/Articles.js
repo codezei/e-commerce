@@ -9,14 +9,14 @@ function Articles () {
                         <h2 className="articles__title">
                             Our Insights &#38; Articles
                         </h2>
-                        <Link to="blog" className="articles__link">View All &gt;</Link>
+                        <Link to="/blog" className="articles__link">View All &gt;</Link>
                     </div>
             </div>
             <div className="articles__list-wrap">
                 <div className="container">
                 <div className="articles__list">
                     <div className="articles__item">
-                        <img src="/article1.jpg" alt="" className="articles__item-img"/>
+                        <img src="./images/article1.jpg" alt="" className="articles__item-img"/>
                         <div className="articles__item-content">
                             <h5 className="articles__item-category">
                                 News
@@ -37,7 +37,7 @@ function Articles () {
 
                     </div>
                     <div className="articles__item">
-                        <img src="/article2.jpg" alt="" className="articles__item-img"/>
+                        <img src="./images/article2.jpg" alt="" className="articles__item-img"/>
                         <div className="articles__item-content">
                             <h5 className="articles__item-category">
                                 News
@@ -58,7 +58,7 @@ function Articles () {
 
                     </div>
                     <div className="articles__item">
-                        <img src="/article3.jpg" alt="" className="articles__item-img"/>
+                        <img src="./images/article3.jpg" alt="" className="articles__item-img"/>
                         <div className="articles__item-content">
                             <h5 className="articles__item-category">
                                 News

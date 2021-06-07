@@ -5,10 +5,12 @@ import Pagination from "./Pagination"
 
 
 function BlogList (props) {
+    let condition = new RegExp(props.searchInput, 'ig')
 
+    
     let allArticles = props.articles.map((article, index)=>{
         return (
-            props.activeCategory === "" || props.activeCategory === article.category ?
+            (props.activeCategory === "" || props.activeCategory === article.category) && (!props.searchInput || article.title.match(condition)) ?
             <div className="blog__item blog-article" key={`article-${index}`}>
             <div className="blog-article__image-wrap">
                 <img src={`./images/${article.image}`} alt="" className="blog-article__image" />

@@ -6,7 +6,7 @@ function ProductsWeek (props) {
                 <div className="products-list__item products-week" key={`${product.id}-week`}>
 
                     <div className="products-week__top">
-                        <img src={`/${product.img}`} alt="" className="products-week__img" />
+                        <img src={`./images/${product.img}`} alt="" className="products-week__img" />
                         <div className="products-week__nav">
                             <button className="products-week__btn">
                                 <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20">

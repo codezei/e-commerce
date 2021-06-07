@@ -6,7 +6,7 @@ function Services () {
             <div className="container-fluid">
                 <div className="services__list">
                     <div className="services__item">
-                        <img src="/service1.png" alt="" className="services__img"/>
+                        <img src="./images/service1.png" alt="" className="services__img"/>
                         <div>
                             <h4 className="services__title">
                             Support 24/7.
@@ -18,7 +18,7 @@ function Services () {
                         </div>
                     </div>
                     <div className="services__item">
-                        <img src="/service2.png" alt="" className="services__img"/>
+                        <img src="./images/service2.png" alt="" className="services__img"/>
                         <div>
                             <h4 className="services__title">
                             Delivery.
@@ -29,7 +29,7 @@ function Services () {
                         </div>
                     </div>
                     <div className="services__item">
-                        <img src="/service3.png" alt="" className="services__img"/>
+                        <img src="./images/service3.png" alt="" className="services__img"/>
                         <div>
                             <h4 className="services__title">
                             100% Payment secure.

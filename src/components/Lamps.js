@@ -6,7 +6,7 @@ function Lamps () {
             <div className="container-fluid">
                 <div className="lamps__list">
                     <div className="lamps__item">
-                        <img src="/lamp1.png" alt="" className="lamps__img"/>
+                        <img src="./images/lamp1.png" alt="" className="lamps__img"/>
                         <div className="lamps__info">
                             <h4 className="lamps__title">
                             Mirum Notare Tellus
@@ -20,7 +20,7 @@ function Lamps () {
                         </div>
                     </div>
                     <div className="lamps__item">
-                        <img src="/lamp2.png" alt="" className="lamps__img"/>
+                        <img src="./images/lamp2.png" alt="" className="lamps__img"/>
                         <div className="lamps__info">
                             <h4 className="lamps__title">
                             Malesuada Tempor Euismod

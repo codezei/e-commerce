@@ -14,7 +14,7 @@ function ProductsNew (props) {
                         {product.collection}
                     </h4>
                     <div className="products-new__img-wrap">
-                        <img src={`/${product.img}`} alt="" className="products-new__img" />
+                        <img src={`./images/${product.img}`} alt="" className="products-new__img" />
                     </div>
                 </div>
                 :

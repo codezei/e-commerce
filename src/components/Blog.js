@@ -2,6 +2,7 @@ import {connect} from "react-redux"
 import BlogList from "./BlogList"
 import React from 'react'
 import FilterCategoryBlog from "./FilterCategoryBlog"
+import FilterSearch from "./FilterSearch"
 
 
 function Blog (props) {
@@ -10,19 +11,17 @@ function Blog (props) {
     let [activeCategory, setActiveCategory] = React.useState("")
     let [pageNumber, setPageNumber] = React.useState(1)
     let [rangePage, setRangePage] = React.useState(pageNumber * rangeMax)
+    let [searchInput, setSearchInput] = React.useState(0)
+
+    
     React.useEffect(()=>{
-
         setCategories(getUniqueCategory())
-
-        
-        
     }, [])    
-    function getUniqueCategory (brand, price) {
+    function getUniqueCategory () {
         let arr = []
         props.articles.forEach(item=>{
-            // if ((brand === "" || brand === item.brand) && (item.price >= price[0] && item.price <= price[1])) {
                 arr.push(item.category) 
-            // }
+
         })
         let res = []
         arr.forEach(item=>{
@@ -44,9 +43,13 @@ function Blog (props) {
                         setRangePage={setRangePage}
                         setPageNumber={setPageNumber}
                         pageNumber={pageNumber}
+                        searchInput={searchInput}
                         
                     ></BlogList>
                     <div className="blog__sidebar">
+                        <FilterSearch
+                            setSearchInput={setSearchInput}
+                        ></FilterSearch>
                         <FilterCategoryBlog
                             categories={categories}
                             activeCategory={activeCategory}

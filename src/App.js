@@ -7,23 +7,24 @@ import About from './components/pages/About'
 import Catalog from './components/pages/Catalog'
 import Contact from "./components/pages/Contact"
 import BlogPage from "./components/pages/BlogPage"
+import ProductPage from "./components/pages/ProductPage"
 
 
 
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route
 } from "react-router-dom";
 
 function App() {
- 
-  
+
+
   return (
     <div className="App">
       
       <Router>
-      <Header></Header>
+        <Header></Header>
         <Switch>
         <Route path="/about">
             <About />
@@ -39,6 +40,9 @@ function App() {
           </Route>
           <Route path="/blog">
             <BlogPage/>
+          </Route>
+          <Route path="/:id">
+            <ProductPage/>
           </Route>
         </Switch>
       </Router>

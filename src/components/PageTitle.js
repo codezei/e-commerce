@@ -1,8 +1,11 @@
 import {Link, useRouteMatch} from 'react-router-dom'
 import './PageTitle.scss'
+import React from 'react'
+
 
 function PageTitle (props) {
     let match = useRouteMatch();
+
     return (
         <section className="page-title">
             <div className="container">
@@ -11,7 +14,7 @@ function PageTitle (props) {
                 </h2>
                 <div className="breadcrumbs">
                     <Link to="/" className="breadcrumbs__link">Home</Link> / 
-                    <Link to={match} className="breadcrumbs__link">{props.title}</Link>
+                    <Link to={match.url} className="breadcrumbs__link">{props.title}</Link>
                 </div>
             </div>
         </section>
