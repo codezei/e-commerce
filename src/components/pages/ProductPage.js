@@ -14,6 +14,7 @@ function ProductPage (props) {
         let productData = props.products.filter(item=>{
             return item.id === id
         })
+        console.log(...productData)
         setProductInfo(...productData)
     }, [])
 

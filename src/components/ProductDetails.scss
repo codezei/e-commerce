@@ -1,8 +1,10 @@
 .product {
     &-details {
         font-family: "Rubik", sans-serif;
+        padding-top: 120px;
         &__wrap {
             display: flex;
+            margin-bottom: 100px;
         }
         &__col {
             width: calc(50% - 60px);
@@ -44,6 +46,7 @@
         &__nav {
             display: flex;
             justify-content: center;
+            margin-bottom: 40px;
         }
         &__btn {
             background-color: #edf1f4;
@@ -82,6 +85,7 @@
         &--fill {
             background: #ffcc00;
         }
+        cursor: pointer;
     }
 }
 .count {
@@ -107,21 +111,31 @@
         border: 2px solid #f2f2f2;
         display: flex;
         align-items: center;
+        justify-content: center;
+        color: #000;
         padding: 10px;
-        flex-shrink: 0;
         margin-left: 30px;
+        width: 100%;
     }
     &__thumbnail {
         border: 2px solid #f2f2f2;
         display: flex;
         align-items: center;
         padding: 10px;
+        cursor: pointer;
+        &--active {
+            border: 2px solid #fcd7b6;
+        }
+
         &:not(:last-child) {
             margin-bottom: 25px;
         }
         &-wrap {
             display: flex;
             flex-wrap: wrap;
+            width: 100px;
+            flex-shrink: 0;
+            max-width: 100px;
         }
         &-img {
             width: 100%;

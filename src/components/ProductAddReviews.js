@@ -4,21 +4,29 @@ import "./ProductAddReviews.scss"
 
 function ProductAddReviews (props) {
 
-    React.useEffect(()=>{
-        console.log(props.productReviews)
 
-    }, [props.reviews])
-    
+    let [stars, setStars] = React.useState([
+        <div className="rating_star"></div>,
+        <div className="rating_star"></div>,
+        <div className="rating_star"></div>,
+        <div className="rating_star"></div>,
+        <div className="rating_star"></div>
+    ])
+
     let [newCommentData, setNewCommentData] = React.useState({
         name: "",
-        date: "",
-        rating: "",
+        date: getDateNow(),
+        rating: 0,
         text: ""
     })
+
     function updateCommentData (e) {
         console.log(newCommentData)
     
         setNewCommentData({...newCommentData, [e.target.name]: e.target.value })
+    }
+    function validateForm (data) {
+
     }
     function addComment (e) {
         let productData;
@@ -26,11 +34,14 @@ function ProductAddReviews (props) {
         console.log(props.productReviews)
 
         if (props.productReviews) {
+            validateForm(newCommentData)
+
             productData = {...props.productReviews, productReviews: [...props.productReviews.productReviews, newCommentData]}
         
             newReviews = props.reviews.map(item=>{
                 return item.productId === props.productReviews.productId ? productData : item
             })
+            
         } else {
             newReviews = [...props.reviews, {
                 productId: props.id,
@@ -38,39 +49,82 @@ function ProductAddReviews (props) {
             }]
             console.log(newReviews)
             console.log(props.reviews)
+            console.log('2')
         }
 
-
         props.dispatch(updateReviews(newReviews))
+        setNewCommentData(
+            {
+                name: "",
+                date: "",
+                rating: 0,
+                text: ""
+            }
+        )
+    }
+    function getDateNow () {
+        let date = new Date()
+        let res = `${date.getDate() < 10 ? "0" : ""}${date.getDate()}.${date.getMonth() < 10 ? "0" : ""}${date.getMonth() + 1}.${date.getFullYear()}`
+        return res
+    }
+    // React.useEffect(()=>{
 
+
+    // }, [])
+    function setReviewRating (count) {
+        setNewCommentData(
+            {
+                ...newCommentData, rating: count + 1
+            }
+        )
     }
     return (
         <div className="reviews">
-            <form className="reviews-form">
-                <div className="reviews-form__input-wrap">
-                    <input className="reviews-form__input" type="text" placeholder="name" name="name" value={newCommentData.name} onChange={updateCommentData} />
+            <form className="reviews-form form">
+                <div className="form__input-wrap">
+                    <input className="form__input" type="text" placeholder="NAME" name="name" value={newCommentData.name} onChange={updateCommentData} />
                 </div>
-                {/* <div className="rating reviews__rating">
-                    <button className="rating_star"></button>
-                    <button className="rating_star"></button>
-                    <button className="rating_star"></button>
-                    <button className="rating_star"></button>
-                    <button className="rating_star"></button>
-                </div> */}
-                <textarea name="text" value={newCommentData.comment} onChange={updateCommentData} className="reviews-form__input"></textarea>
-                <button type="button" onClick={addComment} className="btn review-form__btn">Отправить</button>
+                <div className="form__input-wrap form__input-wrap--center">
+                    <div className="rating reviews__rating">
+                        {
+                            stars.map((star, starIndex)=>{
+                                return (
+                                    starIndex + 1 <= newCommentData.rating ? <button type="button" className="rating__star rating__star--fill" key={`star-${starIndex}`} onClick={()=>{setReviewRating(starIndex)}}></button> : <button type="button" className="rating__star" key={`star-${starIndex}`} onClick={()=>{setReviewRating(starIndex)}}></button>
+                                )
+                            })
+                        }
+                    </div>
+                </div>
+
+                <textarea name="text" value={newCommentData.text} onChange={updateCommentData} className="form__input reviews-form__msg" placeholder="MESSAGE" required></textarea>
+                <button type="button" onClick={addComment} className="btn form__btn">Send</button>
             </form>
             <div className="reviews__list">
                 {!!props.productReviews ? props.productReviews.productReviews.map((item, index)=>{
                     return(
-                        <div key={`comment-${index}`}>
-                            <p>{item.name}</p>
-                            <p>{item.rating}</p>
+                        <div key={`comment-${index}`} className="reviews__item">
+                            <div className="reviews__nav">
+                                <p className="reviews__name">{item.name}</p>
+
+                                <div>
+                                    <p>{item.date}</p>
+                                    <div className="reviews__rating rating">
+                                        {
+                                            item.rating > 0 ?
+                                            stars.map((star, starIndex)=>{
+                                                return (
+                                                    starIndex + 1 <= item.rating ? <div className="rating__star rating__star--fill" key={`star-${starIndex}`}></div> : <div className="rating__star" key={`star-${starIndex}`}></div>
+                                                )
+                                            }) : ""
+                                        }
+                                    </div>
+                                </div>
+                            </div>
                             <p>{item.text}</p>
                         </div>
 
                     )
-                }) : "Отзывов пока нет"
+                }).reverse() : "No reviews yet"
                 }
             </div>
         </div>

@@ -33,6 +33,10 @@
         &-wrap {
             width: calc(50% - 10px);
             margin-bottom: 25px;
+            &--center {
+                display: flex;
+                align-items: center;
+            }
         }
     }
     &__name-wrap {
