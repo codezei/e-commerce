@@ -22,7 +22,7 @@ function ProductPage (props) {
     return(
         <div>
             <PageTitle title={productInfo.name}></PageTitle>
-            <ProductDetails productInfo={productInfo} reviews={props.reviews} id={id} dispatch={props.dispatch}></ProductDetails>
+            <ProductDetails productInfo={productInfo} reviews={props.reviews} id={id} dispatch={props.dispatch} cart={props.cart}></ProductDetails>
         </div>
     )
 }
@@ -30,7 +30,8 @@ function ProductPage (props) {
 function mapStateToProps (state) {
     return {
         products: state.data,
-        reviews: state.reviews
+        reviews: state.reviews,
+        cart: state.cart
     }
 }
 

@@ -5,6 +5,8 @@ import React from 'react'
 import ProductsNew from './ProductsNew'
 import ProductsCategories from './ProductsCategories'
 import ProductsWeek from './ProductsWeek'
+import {addProduct} from '../redux/actionCreators'
+import {addToFavList} from '../redux/actionCreators'
 
 
 function Products (props) {
@@ -24,7 +26,7 @@ function Products (props) {
                 <ProductsCategories changeActiveCategory={changeActiveCategory} categories={props.categories} activeCategory={activeCategory} label={props.label}></ProductsCategories>
                 <div className="products-list">
                     {props.label === "new" ? <ProductsNew products={props.products} activeCategory={activeCategory} ></ProductsNew> : ""}
-                    {props.label === "week" ? <ProductsWeek products={props.products} activeCategory={activeCategory} ></ProductsWeek> : ""}
+                    {props.label === "week" ? <ProductsWeek products={props.products} activeCategory={activeCategory} dispatch={props.dispatch} addProduct={addProduct} cart={props.cart} addToFavList={addToFavList} favList={props.favList}></ProductsWeek> : ""}
                     
                     
                 </div>
@@ -37,7 +39,9 @@ function Products (props) {
 function mapStateToProps(state) {
     return {
         products: state.data,
-        categories: state.categories
+        categories: state.categories,
+        cart: state.cart,
+        favList: state.favList
     }
 }
 

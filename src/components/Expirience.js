@@ -6,7 +6,7 @@ function Expirience () {
             <div className="container">
                 <div className="expirience__wrap">
                     <div className="expirience__image-wrap">
-                        <img src="./expirience.jpg" alt="" className="expirience__image" />
+                        <img src="./images/expirience.jpg" alt="" className="expirience__image" />
                     </div>
                     <div className="expirience__info">
                         <div className="expirience__years">

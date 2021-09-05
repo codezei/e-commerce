@@ -25,19 +25,17 @@ function ProductAddReviews (props) {
     
         setNewCommentData({...newCommentData, [e.target.name]: e.target.value })
     }
-    function validateForm (data) {
+    // function validateForm (data) {
 
-    }
+    // }
     function addComment (e) {
+        e.preventDefault()
         let productData;
         let newReviews;
-        console.log(props.productReviews)
 
         if (props.productReviews) {
-            validateForm(newCommentData)
-
+            // validateForm(newCommentData)
             productData = {...props.productReviews, productReviews: [...props.productReviews.productReviews, newCommentData]}
-        
             newReviews = props.reviews.map(item=>{
                 return item.productId === props.productReviews.productId ? productData : item
             })
@@ -47,16 +45,12 @@ function ProductAddReviews (props) {
                 productId: props.id,
                 productReviews: [newCommentData]
             }]
-            console.log(newReviews)
-            console.log(props.reviews)
-            console.log('2')
         }
-
         props.dispatch(updateReviews(newReviews))
         setNewCommentData(
             {
                 name: "",
-                date: "",
+                date: getDateNow (),
                 rating: 0,
                 text: ""
             }
@@ -67,10 +61,6 @@ function ProductAddReviews (props) {
         let res = `${date.getDate() < 10 ? "0" : ""}${date.getDate()}.${date.getMonth() < 10 ? "0" : ""}${date.getMonth() + 1}.${date.getFullYear()}`
         return res
     }
-    // React.useEffect(()=>{
-
-
-    // }, [])
     function setReviewRating (count) {
         setNewCommentData(
             {
@@ -80,9 +70,9 @@ function ProductAddReviews (props) {
     }
     return (
         <div className="reviews">
-            <form className="reviews-form form">
+            <form className="reviews-form form" onSubmit={addComment}>
                 <div className="form__input-wrap">
-                    <input className="form__input" type="text" placeholder="NAME" name="name" value={newCommentData.name} onChange={updateCommentData} />
+                    <input className="form__input" type="text" placeholder="NAME" name="name" value={newCommentData.name} onChange={updateCommentData} required="required" />
                 </div>
                 <div className="form__input-wrap form__input-wrap--center">
                     <div className="rating reviews__rating">
@@ -96,8 +86,8 @@ function ProductAddReviews (props) {
                     </div>
                 </div>
 
-                <textarea name="text" value={newCommentData.text} onChange={updateCommentData} className="form__input reviews-form__msg" placeholder="MESSAGE" required></textarea>
-                <button type="button" onClick={addComment} className="btn form__btn">Send</button>
+                <textarea name="text" value={newCommentData.text} onChange={updateCommentData} className="form__input reviews-form__msg" placeholder="MESSAGE" required="required"></textarea>
+                <button type="submit" className="btn form__btn">Send</button>
             </form>
             <div className="reviews__list">
                 {!!props.productReviews ? props.productReviews.productReviews.map((item, index)=>{

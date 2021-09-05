@@ -159,6 +159,9 @@ function Catalog (props) {
                             rangePage={rangePage}
                             setRangePage={setRangePage}
                             rangeMax={rangeMax}
+                            cart={props.cart}
+                            favList={props.favList}
+                            dispatch={props.dispatch}
                         >
                         </CatalogList>
                     </div>
@@ -173,7 +176,9 @@ function Catalog (props) {
 
 function mapStateToProps (state) {
     return {
-        products: state.data 
+        products: state.data,
+        cart: state.cart,
+        favList: state.favList
     }
 }
 

@@ -2,6 +2,7 @@ import "./ProductDetails.scss"
 import React from 'react'
 import ProductAdd from './ProductAdd.js'
 import ProductGallery from './ProductGallery.js'
+import {addProduct} from '../redux/actionCreators'
 
 
 
@@ -9,6 +10,8 @@ function ProductDetails (props) {
     let [productReviews, setProductReviews] = React.useState(0)
     // let [averageRating, setAverageRating] = React.useState(0)
     let [stars, setStars] = React.useState([])
+
+    let [countProduct, setCountProduct] = React.useState(1)
 
     function getReviews () {
         let res = props.reviews.filter(item=>{
@@ -39,6 +42,42 @@ function ProductDetails (props) {
         setStars(res)
     }
 
+    function increaseCountProduct () {
+        setCountProduct(countProduct + 1)
+    }
+    function decreaseCountProduct () {
+        if (countProduct === 1) return
+        setCountProduct(countProduct - 1)
+    }
+    function addProductToCart (prod) {
+        let newCart = []
+        let cartProduct = {
+            id: prod.id,
+            price: prod.price,
+            name: prod.name,
+            img: prod.img,
+            count: countProduct
+        }
+        let duplicateProduct = props.cart.find(item=>item.id === prod.id)
+        if (duplicateProduct) {
+            let updatedNewCart = props.cart.map(item=>{
+                if (item.id === duplicateProduct.id) {
+                    return {
+                        ...item, count: duplicateProduct.count + countProduct
+                    }
+                } else {
+                    return item
+                }
+            })
+            newCart = updatedNewCart
+        } else {
+            newCart = newCart.concat(props.cart)
+            newCart.push(cartProduct)
+        }
+        props.dispatch(addProduct(newCart))
+    }
+
+
     
 
     React.useEffect(()=>{
@@ -48,6 +87,7 @@ function ProductDetails (props) {
         if (!!productReviews) {
             getAverageRating(productReviews.productReviews) 
         }
+        console.log(props.productInfo)
     }, [productReviews])
 
     return (
@@ -69,11 +109,13 @@ function ProductDetails (props) {
                         </p>
                         <div className="product-details__add">
                             <div className="count">
-                                <button className="count__change">-</button>
-                                <div className="count__value">1</div>
-                                <button className="count__change">+</button>
+                                <button className="count__change" onClick={decreaseCountProduct}>-</button>
+                                <div className="count__value">{countProduct}</div>
+                                <button className="count__change" onClick={increaseCountProduct}>+</button>
                             </div>
-                            <button className="btn product-details__btn">ADD TO CART</button>
+                            <button className="btn product-details__btn" onClick={()=>{
+                                addProductToCart(props.productInfo)
+                            }}>ADD TO CART</button>
                         </div>
                         <p className="product-details__sub-info">
                             SKU: {props.productInfo.sku}
