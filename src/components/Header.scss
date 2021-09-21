@@ -15,6 +15,25 @@
         }
         
     }
+    &__btn {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: #a3bbc8;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        display: none;
+    }
+    @media screen and (max-width: 991px) {
+        padding: 20px 0;
+    }
+    @media screen and (max-width: 767px) {
+        &__btn {
+            display: block;
+        }
+    }
+    
     
 }
 .actions-profile {
@@ -87,11 +106,21 @@
         color: #436372;
         padding: 10px;
         text-decoration: none;
+        display: block;
+    }
+    @media screen and (max-width: 767px) {
+        &--desc {
+            display: none;
+        }
+        &__link {
+            padding: 5px 10px;
+        }
     }
 }
 .logo {
     display: flex;
     align-items: center;
+    font-family: 'Rubik', sans-serif;
     &__text {
         color: #436372;
         font-size: 36px;
@@ -100,4 +129,54 @@
     &__img {
         margin-right: 10px;
     }
+    &--mob {
+        justify-content: center;
+    }
+    @media screen and (max-width: 575px) {
+        &__text {
+            display: none;
+        }
+    }
+}
+
+.mob-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    z-index: 20;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    &__inner {
+        position: absolute;
+        right: 0;
+        max-width: 300px;
+        width: 100%;
+        background-color: #fff;
+        height: 100%;
+        padding: 15px;
+    }
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #436372;
+        background: none;
+        border: none;
+        cursor: pointer;
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+.menu--mob {
+
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
 }

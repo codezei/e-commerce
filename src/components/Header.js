@@ -1,7 +1,7 @@
 
 import logo from '../images/logo.png'
 import {NavLink} from 'react-router-dom'
-import searchIcon from '../images/search-icon.png'
+// import searchIcon from '../images/search-icon.png'
 import wishIcon from '../images/wish-icon.png'
 import carthIcon from '../images/cart-icon.png'
 import './Header.scss'
@@ -18,6 +18,7 @@ function Header (props) {
     let [modeVisibilityCart, setModeVisibilityCart] = React.useState(false)
     let [modeVisibilityFavList, setModeVisibilityFavList] = React.useState(false)
     let [total, setTotal] = React.useState(0)
+    let [showMobMenu, setShowMobMenu] = React.useState(false)
 
     function openCart () {
         setModeVisibilityCart(true)
@@ -86,9 +87,17 @@ function Header (props) {
         }
         props.dispatch(addProduct(newCart))
     }
+
     React.useEffect(()=>{
         totalOrder ()
     }, [props.cart])
+
+    let iconBtn = <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" className="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+            <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z" />
+        </svg>
+    let iconClose = <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
+    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+  </svg>
     
 
     return(
@@ -99,16 +108,16 @@ function Header (props) {
                         <img src={logo} alt="" className="logo__img"/>
                         <div className="logo__text">Glee</div>
                     </div>
-                    <ul className="menu">
+                    <ul className="menu menu--desc">
                         <li className="menu__item">
                             <NavLink to="/" className="menu__link" activeClassName="menu__link--active">Home</NavLink>
                         </li>
                         <li className="menu__item">
                             <NavLink to="/about" className="menu__link" activeClassName="menu__link--active">About</NavLink>
                         </li>
-                        <li className="menu__item">
+                        {/* <li className="menu__item">
                             <NavLink to="/about" className="menu__link" activeClassName="menu__link--active">Services</NavLink>
-                        </li>
+                        </li> */}
                         <li className="menu__item">
                             <NavLink to="/list" className="menu__link" activeClassName="menu__link--active">Catalog</NavLink>
                         </li>
@@ -120,10 +129,10 @@ function Header (props) {
                         </li>
                     </ul>
                     <div className="header__actions">
-                        <div className="header__actions-item actions-search">
+                        {/* <div className="header__actions-item actions-search">
                             <input type="text" className="actions-search__input" />
                             <img src={searchIcon} alt="" className="actions-search__img" />
-                        </div>
+                        </div> */}
                         <div className="header__actions-item actions-profile">
                             <div className="actions-profile__wish actions-profile__item" onClick={openFavList}>
                                 <img src={wishIcon} alt="" className="actions-profile__item-img" />
@@ -140,9 +149,52 @@ function Header (props) {
                                 modeVisibilityFavList ? <FavList favList={props.favList} closeFavList={closeFavList} removeFavListProduct={removeFavListProduct} addProductToCart={addProductToCart}></FavList> : ""
                             }
                         </div>
+                        <button type="button" className="header__btn" onClick={()=>{
+                            setShowMobMenu(true)
+                            setModeVisibilityCart(false) 
+                            setModeVisibilityFavList(false) 
+                            }}>
+                            {iconBtn}
+                        </button>
                     </div>
                 </div>
             </div>
+            {
+                showMobMenu ? <div className="mob-menu">
+
+                <div className="mob-menu__inner">
+                    <button type="button" className="mob-menu__close" onClick={()=>{setShowMobMenu(false)}}>
+                        {iconClose}
+                    </button>
+                    <div className="logo logo--mob">
+                        <img src={logo} alt="" className="logo__img"/>
+                        <div className="logo__text">Glee</div>
+                    </div>
+                    <ul className="menu menu--mob">
+                        <li className="menu__item">
+                            <NavLink to="/" className="menu__link" activeClassName="menu__link--active" onClick={()=>{setShowMobMenu(false)}}>Home</NavLink>
+                        </li>
+                        <li className="menu__item">
+                            <NavLink to="/about" className="menu__link" activeClassName="menu__link--active" onClick={()=>{setShowMobMenu(false)}}>About</NavLink>
+                        </li>
+                        {/* <li className="menu__item">
+                            <NavLink to="/about" className="menu__link" activeClassName="menu__link--active">Services</NavLink>
+                        </li> */}
+                        <li className="menu__item">
+                            <NavLink to="/list" className="menu__link" activeClassName="menu__link--active" onClick={()=>{setShowMobMenu(false)}}>Catalog</NavLink>
+                        </li>
+                        <li className="menu__item">
+                            <NavLink to="/blog" className="menu__link" activeClassName="menu__link--active" onClick={()=>{setShowMobMenu(false)}}>Blog</NavLink>
+                        </li>
+                        <li className="menu__item">
+                            <NavLink to="/contact" className="menu__link" activeClassName="menu__link--active" onClick={()=>{setShowMobMenu(false)}}>Contact</NavLink>
+                        </li>
+                    </ul>
+                </div>
+
+            </div> : ""
+            }
+            
         </header>
     )
 }

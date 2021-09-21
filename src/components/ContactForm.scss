@@ -16,6 +16,29 @@
         margin: 0 15px;
     }
 
+    @media screen and (max-width: 991px) {
+        padding: 50px 0;
+        &__wrap {
+
+            flex-direction: column-reverse;
+            align-items: center;
+            max-width: 500px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__form {
+            margin: 0;
+        }
+        &__map {
+            margin-bottom: 15px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        padding: 30px 0;
+    }
+
+
 }
 
 .form {
@@ -108,4 +131,16 @@
         padding-left: 40px;
         text-align: center;
     }
+
+    @media screen and (max-width: 575px) {
+        &__input {
+            &-wrap {
+                width: 100%;
+            }
+        }
+        &__btn {
+            width: 100%;
+        }
+    }
+
 }

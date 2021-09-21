@@ -56,10 +56,16 @@ function BlogList (props) {
 
 
     return (
-        <div>
+        <div className="blog__list-wrap">
             <div className="blog__list">
                     {
-                    [...articlesOfPage]
+                        [...articlesOfPage]
+
+                    }
+                    {
+                       !articlesOfPage.length ? 
+                       <p className="blog__notice">List is empty</p>
+                       : ""
                     }
             </div>
             <Pagination 

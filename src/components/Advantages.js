@@ -31,7 +31,7 @@ function Advantages () {
                         advantages.map((item, index)=>{
                             return (
                                 <div className="advantages__item" key={`advantage-${index}`}>
-                                    <img src={`./${item.image}`} alt="" className="advantages__img"/>
+                                    <img src={`./images/${item.image}`} alt="" className="advantages__img"/>
                                     <p className="advantages__value">
                                         {item.value}
                                     </p>

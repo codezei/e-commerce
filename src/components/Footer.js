@@ -1,12 +1,12 @@
-import {Link} from 'react-router-dom';
-import logo from '../images/logo.png'
+// import {Link} from 'react-router-dom';
+// import logo from '../images/logo.png'
 import './Footer.scss'
-
+import {NavLink} from 'react-router-dom'
 function Footer () {
     return (
         <footer className="footer">
             <div className="container">
-                <div className="footer__top">
+                {/* <div className="footer__top">
                     <div className="footer__item">
                     <div className="logo footer__logo">
                         <img src={logo} alt="" className="logo__img"/>
@@ -53,14 +53,14 @@ function Footer () {
                     Subscribe by our newsletter and get update protidin.
                     </p>
                     </div>
-                </div>
+                </div> */}
                 <div className="footer__bottom">
                     <p className="footer__copyright">©2021 CopyRight Example. All rights reserved. </p>
                     <div className="footer__menu">
-                        <Link to="" className="footer__menu-item">Home</Link>
-                        <Link to="" className="footer__menu-item">About</Link>
-                        <Link to="" className="footer__menu-item">Blog</Link>
-                        <Link to="" className="footer__menu-item">Contact</Link>
+                        <NavLink to="/" className="footer__menu-item">Home</NavLink>
+                        <NavLink to="/about" className="footer__menu-item">About</NavLink>
+                        <NavLink to="/blog" className="footer__menu-item">Blog</NavLink>
+                        <NavLink to="/contact" className="footer__menu-item">Contact</NavLink>
                     </div>
                 </div>
             </div>

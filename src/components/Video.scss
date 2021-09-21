@@ -44,4 +44,45 @@
             height: 100%;
         }
     }
+    @media screen and (max-width: 1199px) {
+        &__title {
+            font-size: 34px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        margin-bottom: 50px;
+        &__title {
+            font-size: 32px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        margin-bottom: 30px;
+        &__title {
+            font-size: 30px;
+        }
+        &__wrapper {
+            padding: 25px 0;
+        }
+    }
+    @media screen and (max-width: 575px) {
+        &__title {
+            font-size: 28px;
+        }
+        &__play {
+            width: 40px;
+            height: 40px;  
+            &:after {
+                width: 60px;
+                height: 60px;
+                top: -10px;
+                left: -10px;
+            }
+            svg {
+                width: 15px;
+            }
+        }
+        &__wrapper {
+            padding: 15px 0;
+        }
+    }
 }

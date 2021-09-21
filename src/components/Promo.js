@@ -36,7 +36,7 @@ function Promo () {
                             <p className="promo-slider__item-text">
                             Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
                             </p>
-                            <Link className="promo-slider__item-btn" to="/shop">
+                            <Link className="promo-slider__item-btn btn" to="/list">
                                 Shop Now
                             </Link>
 
@@ -55,7 +55,7 @@ function Promo () {
                             <p className="promo-slider__item-text">
                             Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
                             </p>
-                            <Link className="promo-slider__item-btn" to="/shop">
+                            <Link className="promo-slider__item-btn btn" to="/list">
                                 Shop Now
                             </Link>
 
@@ -74,7 +74,7 @@ function Promo () {
                             <p className="promo-slider__item-text">
                             Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
                             </p>
-                            <Link className="promo-slider__item-btn" to="/shop">
+                            <Link className="promo-slider__item-btn btn" to="/list">
                                 Shop Now
                             </Link>
 

@@ -50,5 +50,15 @@
         }
     }
 
+    @media screen and (max-width: 767px) {
+        &__bottom {
+            flex-direction: column;
+            padding: 30px 0;
+        }
+        &__copyright {
+            margin-bottom: 15px;
+        }
+    }
+
     
 }

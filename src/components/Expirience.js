@@ -27,7 +27,7 @@ function Expirience () {
                         </p>
                         <div className="expirience-result">
                             <div className="expirience-result__item">
-                                <img src="./result1.png" alt="" className="expirience-result__img"/>
+                                <img src="./images/result1.png" alt="" className="expirience-result__img"/>
                                 <div className="expirience-result__info">
                                     <div className="expirience-result__count">
                                         520+
@@ -39,7 +39,7 @@ function Expirience () {
                                 </div>
                             </div>
                             <div className="expirience-result__item">
-                                <img src="./result2.png" alt="" className="expirience-result__img"/>
+                                <img src="./images/result2.png" alt="" className="expirience-result__img"/>
                                 <div className="expirience-result__info">
                                     <div className="expirience-result__count">
                                         $4M
@@ -51,7 +51,7 @@ function Expirience () {
                                 </div>
                             </div>
                             <div className="expirience-result__item">
-                                <img src="./result1.png" alt="" className="expirience-result__img"/>
+                                <img src="./images/result1.png" alt="" className="expirience-result__img"/>
                                 <div className="expirience-result__info">
                                     <div className="expirience-result__count">
                                         250

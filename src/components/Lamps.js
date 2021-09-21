@@ -26,7 +26,7 @@ function Lamps () {
                             Malesuada Tempor Euismod
                             </h4>
                             <p className="lamps__text">
-                            50W 8000lm Compact Size for HID StreetLightReplacementLEDCornLight
+                            50W 8000lm Compact Size for HID <span>StreetLight</span><span>Replacemen</span><span>tLEDCornLight</span>
                             </p>
                             <button className="lamps__btn">
                             View More
