@@ -2,6 +2,7 @@
     &-details {
         font-family: "Rubik", sans-serif;
         padding-top: 120px;
+        padding-bottom: 120px;
         &__wrap {
             display: flex;
             margin-bottom: 100px;
@@ -68,6 +69,37 @@
             }
         }
     }
+    @media screen and (max-width: 991px) {
+        
+        &-details {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            &__wrap {
+                flex-direction: column-reverse;
+                margin-bottom: 50px;
+            }
+            &__col {
+                width: 100%;
+                margin-right: auto;
+                margin-left: auto;
+                &:last-of-type {
+                    margin-bottom: 25px;
+                }
+            }
+        }
+        &-add {
+            &__nav {
+                flex-direction: column;
+            }
+            &__btn {
+                &:not(:last-child) {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
 
 }
 
@@ -141,6 +173,29 @@
         &-img {
             width: 100%;
         }
+    }
+    @media screen and (max-width: 575px) {
+
+            flex-direction: column;
+            &__main {
+                margin-left: 0;
+            }
+           
+            &__thumbnail {
+                width: calc(33% - 10px);
+                max-width: 100px;
+                &:not(:last-child) {
+                    margin-bottom: 0;
+                    margin-right: 15px;
+                }
+                &-wrap {
+                    max-width: 100%;
+                    width: 100%;
+                    justify-content: space-between;
+                    margin-bottom: 25px;
+                }
+            }
+
     }
 }
 

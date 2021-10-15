@@ -16,12 +16,16 @@ function Articles() {
                 <div className="container">
                     <div className="articles__list">
                         <div className="articles__item">
-                            <img src="./images/article1.jpg" alt="" className="articles__item-img" />
-                            <div className="articles__item-inner">
-                                <div className="articles__item-content">
-                                    <h5 className="articles__item-category">
+                            <div className="articles__item-wrap">
+                                <img src="./images/article1.jpg" alt="" className="articles__item-img" />
+                                <h5 className="articles__item-category">
                                         News
                                     </h5>
+                            </div>
+                            
+                            <div className="articles__item-inner">
+                                <div className="articles__item-content">
+                                    
                                     <p className="articles__item-desc">
                                         Diusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
                                     </p>
@@ -39,12 +43,16 @@ function Articles() {
 
                         </div>
                         <div className="articles__item">
-                            <img src="./images/article2.jpg" alt="" className="articles__item-img" />
+                            <div className="articles__item-wrap">
+                                <img src="./images/article2.jpg" alt="" className="articles__item-img" />
+                                <h5 className="articles__item-category">
+                                        News
+                                </h5>
+                            </div>
+                            
                             <div className="articles__item-inner">
                                 <div className="articles__item-content">
-                                    <h5 className="articles__item-category">
-                                        News
-                                    </h5>
+                                    
                                     <p className="articles__item-desc">
                                         Aonsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
                                     </p>
@@ -63,12 +71,16 @@ function Articles() {
 
                         </div>
                         <div className="articles__item">
-                            <img src="./images/article3.jpg" alt="" className="articles__item-img" />
+                            <div className="articles__item-wrap">
+                                <img src="./images/article3.jpg" alt="" className="articles__item-img" />
+                                <h5 className="articles__item-category">
+                                        News
+                                </h5>
+                            </div>  
+                            
                             <div className="articles__item-inner">
                                 <div className="articles__item-content">
-                                    <h5 className="articles__item-category">
-                                        News
-                                    </h5>
+                                    
                                     <p className="articles__item-desc">
                                         Rncididunt ut labore et dolore magna aliqua. Ut enim
                                     </p>

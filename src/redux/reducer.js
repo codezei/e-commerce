@@ -2,6 +2,7 @@ import {ACTION_LOAD_DATA} from './actions'
 import {ACTION_UPDATE_REVIEWS} from './actions'
 import {ACTION_ADD_PRODUCT} from './actions'
 import {ACTION_ADD_FAVORITE} from './actions'
+import {ACTION_ADD_RECENT} from './actions'
 
 
 let initialState = {
@@ -391,7 +392,8 @@ let initialState = {
 
     ],
     cart: [],
-    favList: []
+    favList: [],
+    recentList: []
 }
 
 
@@ -405,6 +407,8 @@ function rootReducer (state = initialState, action) {
           return {...state, cart: action.payload}
         case ACTION_ADD_FAVORITE: 
           return {...state, favList: action.payload}
+        case ACTION_ADD_RECENT:
+          return {...state, recentList: action.payload}
         default:
           return state
       }

@@ -87,7 +87,7 @@ function ProductDetails (props) {
         if (!!productReviews) {
             getAverageRating(productReviews.productReviews) 
         }
-        console.log(props.productInfo)
+
     }, [productReviews])
 
     return (

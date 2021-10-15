@@ -160,7 +160,7 @@ function Catalog (props) {
                         >
                         </FilterBrand>
 
-                        <FilterRecent></FilterRecent>
+                        {/* <FilterRecent recentList={props.recentList}></FilterRecent> */}
                     </div>
                     <div className="catalog__content">
                         <CatalogList 
@@ -192,7 +192,8 @@ function mapStateToProps (state) {
     return {
         products: state.data,
         cart: state.cart,
-        favList: state.favList
+        favList: state.favList,
+        recentList: state.recentList
     }
 }
 

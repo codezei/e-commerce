@@ -2,6 +2,7 @@ import {ACTION_LOAD_DATA} from './actions'
 import {ACTION_UPDATE_REVIEWS} from './actions'
 import {ACTION_ADD_PRODUCT} from './actions'
 import {ACTION_ADD_FAVORITE} from './actions'
+import {ACTION_ADD_RECENT} from './actions'
 
 
 const loadData = (data)=>{
@@ -30,4 +31,11 @@ const addToFavList = (product)=>{
     }
 }
 
-export {loadData, updateReviews, addProduct, addToFavList}
+const addToRecentList = (product)=>{
+    return {
+        type: ACTION_ADD_RECENT,
+        payload: product
+    }
+}
+
+export {loadData, updateReviews, addProduct, addToFavList, addToRecentList}
