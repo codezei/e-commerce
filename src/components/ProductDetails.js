@@ -3,7 +3,7 @@ import React from 'react'
 import ProductAdd from './ProductAdd.js'
 import ProductGallery from './ProductGallery.js'
 import {addProduct} from '../redux/actionCreators'
-
+import Footer from './Footer'
 
 
 function ProductDetails (props) {
@@ -131,7 +131,6 @@ function ProductDetails (props) {
                 </div>
                 <ProductAdd productReviews={productReviews} reviews={props.reviews} dispatch={props.dispatch} id={props.id}></ProductAdd>
             </div>
-
         </div>
     )
 }

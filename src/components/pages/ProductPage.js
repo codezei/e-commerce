@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom"
 import {connect} from "react-redux"
 import React from 'react'
 import ProductDetails from "../ProductDetails"
+import Footer from '../Footer'
 
 // import {addToRecentList} from '../../redux/actionCreators'
 
@@ -62,6 +63,7 @@ function ProductPage (props) {
         <div>
             <PageTitle title={productInfo.name}></PageTitle>
             <ProductDetails productInfo={productInfo} reviews={props.reviews} id={id} dispatch={props.dispatch} cart={props.cart}></ProductDetails>
+            <Footer></Footer>
         </div>
     )
 }
