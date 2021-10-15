@@ -17,7 +17,7 @@ function Video () {
     return (
         <div className="video">
             <div className="video__inner">
-            <img src={`./images/${videoData.videoPoster}`} alt="" className="video__poster"/>
+            <img src={`${process.env.PUBLIC_URL}/images/${videoData.videoPoster}`} alt="" className="video__poster"/>
                 {videoData.show ? <VideoPlayer idVideo={videoData.videoId}></VideoPlayer> : <VideoPoster poster={videoData.videoPoster} videoHandler={videoHandler}></VideoPoster> }
 
             </div>

@@ -193,7 +193,7 @@ function mapStateToProps (state) {
         products: state.data,
         cart: state.cart,
         favList: state.favList,
-        recentList: state.recentList
+        // recentList: state.recentList
     }
 }
 

@@ -58,7 +58,7 @@ function CatalogList (props) {
             (props.activeCategory === "" || props.activeCategory === product.category) && (props.activeBrand === "" || props.activeBrand === product.brand) && (product.price >= props.minMaxValue[0] && product.price <= props.minMaxValue[1]) ?
             <div className="catalog-list__item product" key={`${product.id}-week`}>
                 <div className="product__top">
-                    <img src={`./images/${product.img}`} alt="" className="product__img" />
+                    <img src={`${process.env.PUBLIC_URL}/images/${product.img}`} alt="" className="product__img" />
                     <div className="product__nav">
                         <Link to={`/${product.id}`} className="product__btn">
                             <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} viewBox="0 0 20 20">

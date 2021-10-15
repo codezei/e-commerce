@@ -13,7 +13,7 @@ function BlogList (props) {
             (props.activeCategory === "" || props.activeCategory === article.category) && (!props.searchInput || article.title.match(condition)) ?
             <div className="blog__item blog-article" key={`article-${index}`}>
             <div className="blog-article__image-wrap">
-                <img src={`./images/${article.image}`} alt="" className="blog-article__image" />
+                <img src={`${process.env.PUBLIC_URL}/images/${article.image}`} alt="" className="blog-article__image" />
                 <div className="blog-article__info">
                     <div className="blog-article__date">
                         {article.date}

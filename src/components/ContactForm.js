@@ -23,7 +23,7 @@ function ContactForm () {
 
                     </form>
                     <div className="contact-form__map">
-                        <img src="./images/map.jpg" alt="" className="contact-form__map-img" />
+                        <img src={`${process.env.PUBLIC_URL}/images/map.jpg`} alt="" className="contact-form__map-img" />
                     </div>
                 </div>
             </div>

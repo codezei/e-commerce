@@ -18,7 +18,7 @@ function ProductGallery (props) {
                         <div className={`product-gallery__thumbnail ${'img-'+index === activeImg ? 'product-gallery__thumbnail--active' : ''}`} key={`thumbnail-${index}`} id={`img-${index}`} onClick={(e)=>{
                             setActiveImg(e.target.id || e.target.parentElement.id)
                         }}>
-                            <img src={`./images/${item}`} alt="" className="product-gallery__thumbnail-img"  />
+                            <img src={`${process.env.PUBLIC_URL}/images/${item}`} alt="" className="product-gallery__thumbnail-img"  />
                         </div>
                     )
                 })
@@ -31,7 +31,7 @@ function ProductGallery (props) {
                 images.map((item, index)=>{
                     return (
                         activeImg === 'img-'+index ? 
-                        <img src={`./images/${item}`} alt="" className="product-gallery__main-img" key={`main-img-${index}`}/>
+                        <img src={`${process.env.PUBLIC_URL}/images/${item}`} alt="" className="product-gallery__main-img" key={`main-img-${index}`}/>
                         :
                         ""
                     )

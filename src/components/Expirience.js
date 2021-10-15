@@ -6,7 +6,7 @@ function Expirience () {
             <div className="container">
                 <div className="expirience__wrap">
                     <div className="expirience__image-wrap">
-                        <img src="./images/expirience.jpg" alt="" className="expirience__image" />
+                        <img src={`${process.env.PUBLIC_URL}/images/expirience.jpg`} alt="" className="expirience__image" />
                     </div>
                     <div className="expirience__info">
                         <div className="expirience__years">
@@ -27,7 +27,7 @@ function Expirience () {
                         </p>
                         <div className="expirience-result">
                             <div className="expirience-result__item">
-                                <img src="./images/result1.png" alt="" className="expirience-result__img"/>
+                                <img src={`${process.env.PUBLIC_URL}/images/result1.png`} alt="" className="expirience-result__img"/>
                                 <div className="expirience-result__info">
                                     <div className="expirience-result__count">
                                         520+
@@ -39,7 +39,7 @@ function Expirience () {
                                 </div>
                             </div>
                             <div className="expirience-result__item">
-                                <img src="./images/result2.png" alt="" className="expirience-result__img"/>
+                                <img src={`${process.env.PUBLIC_URL}/images/result2.png`} alt="" className="expirience-result__img"/>
                                 <div className="expirience-result__info">
                                     <div className="expirience-result__count">
                                         $4M
@@ -51,7 +51,7 @@ function Expirience () {
                                 </div>
                             </div>
                             <div className="expirience-result__item">
-                                <img src="./images/result1.png" alt="" className="expirience-result__img"/>
+                                <img src={`${process.env.PUBLIC_URL}/images/result3.png`} alt="" className="expirience-result__img"/>
                                 <div className="expirience-result__info">
                                     <div className="expirience-result__count">
                                         250

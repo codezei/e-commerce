@@ -17,7 +17,7 @@ function Articles() {
                     <div className="articles__list">
                         <div className="articles__item">
                             <div className="articles__item-wrap">
-                                <img src="./images/article1.jpg" alt="" className="articles__item-img" />
+                                <img src={`${process.env.PUBLIC_URL}/images/article1.jpg`} alt="" className="articles__item-img" />
                                 <h5 className="articles__item-category">
                                         News
                                     </h5>
@@ -44,7 +44,7 @@ function Articles() {
                         </div>
                         <div className="articles__item">
                             <div className="articles__item-wrap">
-                                <img src="./images/article2.jpg" alt="" className="articles__item-img" />
+                                <img src={`${process.env.PUBLIC_URL}/images/article2.jpg`} alt="" className="articles__item-img" />
                                 <h5 className="articles__item-category">
                                         News
                                 </h5>
@@ -72,7 +72,7 @@ function Articles() {
                         </div>
                         <div className="articles__item">
                             <div className="articles__item-wrap">
-                                <img src="./images/article3.jpg" alt="" className="articles__item-img" />
+                                <img src={`${process.env.PUBLIC_URL}/images/article3.jpg`} alt="" className="articles__item-img" />
                                 <h5 className="articles__item-category">
                                         News
                                 </h5>

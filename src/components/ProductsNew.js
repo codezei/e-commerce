@@ -32,7 +32,7 @@ function ProductsNew (props) {
                         {product.collection}
                     </h4>
                     <div className="products-new__img-wrap">
-                        <img src={`./images/${product.img}`} alt="" className="products-new__img" />
+                        <img src={`${process.env.PUBLIC_URL}/images/${product.img}`} alt="" className="products-new__img" />
                     </div>
                 </Link>
                 :

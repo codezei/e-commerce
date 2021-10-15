@@ -61,7 +61,7 @@ function Team () {
                                 return (
                                     <div className="team__item worker" key={`worker-${index}`}>
                                     <div className="worker__img-wrap">
-                                        <img src={`./images/${item.image}`} alt="" className="worker__img" />
+                                        <img src={`${process.env.PUBLIC_URL}/images/${item.image}`} alt="" className="worker__img" />
                                     </div>
                                     <div className="worker__info">
                                         <div>

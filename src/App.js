@@ -11,10 +11,13 @@ import ProductPage from "./components/pages/ProductPage"
 
 
 
+
+
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  HashRouter
 } from "react-router-dom";
 
 function App() {
@@ -23,7 +26,7 @@ function App() {
   return (
     <div className="App">
       
-      <Router>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Header></Header>
         <Switch>
         <Route path="/about">
@@ -45,7 +48,7 @@ function App() {
             <ProductPage/>
           </Route>
         </Switch>
-      </Router>
+      </HashRouter>
       
 
     </div>

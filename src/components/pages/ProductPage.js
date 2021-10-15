@@ -4,7 +4,7 @@ import {connect} from "react-redux"
 import React from 'react'
 import ProductDetails from "../ProductDetails"
 
-import {addToRecentList} from '../../redux/actionCreators'
+// import {addToRecentList} from '../../redux/actionCreators'
 
 
 function ProductPage (props) {
@@ -26,24 +26,24 @@ function ProductPage (props) {
 
     })
 
-    function setRecentList (prod) {
-        let duplicate = false
-        for(let i = 0; i < props.recentList.length; i++) {
+    // function setRecentList (prod) {
+    //     let duplicate = false
+    //     for(let i = 0; i < props.recentList.length; i++) {
             
-            if (props.recentList[i].id === prod.id) {
-                duplicate = true
-            }
+    //         if (props.recentList[i].id === prod.id) {
+    //             duplicate = true
+    //         }
 
 
 
             
-        }
+    //     }
 
-        if (!duplicate) {
-            props.dispatch(addToRecentList([...props.recentList, prod]))
+    //     if (!duplicate) {
+    //         props.dispatch(addToRecentList([...props.recentList, prod]))
             
-        }
-    }
+    //     }
+    // }
 
 
 
@@ -52,10 +52,6 @@ function ProductPage (props) {
             return item.id === id
         })
         setProductInfo(...productData)
-    
-        setRecentList(...productData)
-
-        console.log(...productData)
 
 
     }, [])
@@ -65,7 +61,7 @@ function ProductPage (props) {
     return(
         <div>
             <PageTitle title={productInfo.name}></PageTitle>
-            <ProductDetails productInfo={productInfo} reviews={props.reviews} id={id} dispatch={props.dispatch} cart={props.cart} recentList={props.recentList}></ProductDetails>
+            <ProductDetails productInfo={productInfo} reviews={props.reviews} id={id} dispatch={props.dispatch} cart={props.cart}></ProductDetails>
         </div>
     )
 }
@@ -75,7 +71,7 @@ function mapStateToProps (state) {
         products: state.data,
         reviews: state.reviews,
         cart: state.cart,
-        recentList: state.recentList
+        // recentList: state.recentList
     }
 }
 
